@@ -15,7 +15,7 @@
       </p>
     </div>
     <div class=" md:mt-0 md:col-span-2">
-        <form action="{{ route('register.store') }}" method="POST" class="pt-20 pl-12">
+        <form action="{{ route('register') }}" method="POST" class="pt-20 pl-12">
             @csrf
             <div class="shadow overflow-hidden sm:rounded-md">
             <div class="px-4 py-5 bg-white sm:p-6">
