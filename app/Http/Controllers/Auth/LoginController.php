@@ -10,9 +10,6 @@ use Illuminate\Support\Facades\RateLimiter;
 
 class LoginController extends Controller
 {
-    protected $maxAttempts = 3;
-    protected $decayMinutes = 1;
-
     public function index()
     {
         return view('auth/login');
