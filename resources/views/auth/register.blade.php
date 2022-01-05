@@ -22,22 +22,34 @@
                 <div class="grid grid-cols-6 gap-6">
                     <div class="col-span-6 sm:col-span-6">
                         <label for="last-name" class="block text-sm font-medium text-gray-700">Name</label>
-                        <input type="text" name="name" id="name" autocomplete="family-name" class="appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
+                        <input type="text" name="name" id="name" autocomplete="family-name" class="appearance-none rounded relative block w-full px-3 py-2 border @error('name')border-red-700 @else border-gray-300 @enderror placeholder-gray-500 text-gray-900  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" value="{{ old('name') }}">
+                        @error('name')
+                            <p class="text-sm mt-2 text-red-700 font-medium">{{ $message }}</p>
+                        @enderror
                     </div>
 
                     <div class="col-span-12 sm:col-span-6">
                         <label for="email-address" class="block text-sm font-medium text-gray-700">Email address</label>
-                        <input type="text" name="email" id="email-address" autocomplete="email" class="appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
+                        <input type="text" name="email" id="email-address" autocomplete="email" class="appearance-none rounded relative block w-full px-3 py-2 border @error('email')border-red-700 @else border-gray-300 @enderror placeholder-gray-500 text-gray-900  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" value="{{ old('email') }}">
+                        @error('email')
+                            <p class="text-sm mt-2 text-red-700 font-medium">{{ $message }}</p>
+                        @enderror
                     </div>
 
                     <div class="col-span-6 sm:col-span-3">
                         <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-                        <input type="password" name="password" id="password" autocomplete="given-name" class="appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
+                        <input type="password" name="password" id="password" autocomplete="given-name" class="appearance-none rounded relative block w-full px-3 py-2 border @error('password') border-red-700 @else border-gray-300 @enderror placeholder-gray-500 text-gray-900  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" value="{{ old('password') }}">
+                        @error('password')
+                            <p class="text-sm mt-2 text-red-700 font-medium">{{ $message }}</p>
+                        @enderror
                     </div>
 
                     <div class="col-span-6 sm:col-span-3">
-                        <label for="password_confirm" class="block text-sm font-medium text-gray-700">Password confirmation</label>
-                        <input type="password" name="password_confirm" id="password_confirm" autocomplete="family-name" class="appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
+                        <label for="password_confirmation" class="block text-sm font-medium text-gray-700">Password confirmation</label>
+                        <input type="password" name="password_confirmation" id="password_confirmation" autocomplete="family-name" class="appearance-none rounded relative block w-full px-3 py-2 border @error('password_confirm') border-red-700 @else border-gray-300 @enderror placeholder-gray-500 text-gray-900  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" value="{{ old('password_confirmation') }}">
+                        @error('password_confirmation')
+                            <p class="text-sm mt-2 text-red-700 font-medium">{{ $message }}</p>
+                        @enderror
                     </div>
                 </div>
             </div>
